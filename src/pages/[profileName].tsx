@@ -6,7 +6,7 @@ import trpc from 'utils/trpc';
 const ProfilePage: FunctionComponent = () => {
     const router = useRouter();
 
-    const { isLoading, error, data } = trpc.profile.getProfile.useQuery({ name: router.query.profileName as string });
+    const { isLoading, error, data } = trpc.profile.getProfile.useQuery({ name: router.query.profileName as string || "" });
 
     return (
         <div className='flex flex-col items-center justify-center h-screen gap-4 text-white bg-slate-900'>
